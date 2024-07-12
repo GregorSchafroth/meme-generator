@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
-  width: 550px;
+  /* width: 550px; */
   border: 1px solid #ccc;
 }
 
@@ -30,4 +30,69 @@ body {
 
 .header-info {
   font-size: 12px;
+  font-weight: 300;
 }
+
+.meme-container {
+  margin: 28px 36px;
+}
+
+.meme-input-fields {
+  display: flex;
+  justify-content: space-between;
+  gap: 33px
+}
+
+.top-text-block, 
+.bottom-text-block {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  font-size: 14px;
+}
+
+.top-text,
+.bottom-text {
+  color: #374151;
+  font-size: 14px;
+}
+
+.top-field,
+.bottom-field {
+  margin-top: 3px;
+  color: #6B7280;
+  border: 0.82px solid #D1D5DB;
+  border-radius: 5px;
+  padding: 10px 7px;
+
+}
+
+.meme-button {
+  font-size: 16px;
+  color: white;
+  width: 100%;
+  margin-top: 15px;
+  background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+}
+
+
+/* 
+      <form>
+        <div className='meme-input-fields'>
+          <div className='top-text-block'>
+            <label for="top-text">Top Text:</label>
+            <input type="text" id="top-text" name="top-text" value="shut up" />
+          </div>
+          <div className='bottom-text-block'>
+            <label for="bottom-text">Bottom Text:</label>
+            <input type="text" id="bottom-text" name="bottom-text" value="and take my money" />
+          </div>
+        </div>
+
+        <input type="submit" value="Get a new meme image 🖼️" />
+    </form> */
+
+
