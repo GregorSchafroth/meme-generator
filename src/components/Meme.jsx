@@ -3,8 +3,10 @@ import Memes from '../assets/memesData'
 
 const Meme = () => {
   
+  const [meme, setMeme] = React.useState('')
+
   function getMeme() {    
-    console.log(getRandomElement(Memes.data.memes))
+    setMeme(getRandomElement(Memes.data.memes).url)
   }
 
   function getRandomElement(arr) {
@@ -25,9 +27,10 @@ const Meme = () => {
             <input className='bottom-field' type="text" id="bottom-text" name="bottom-text" placeholder="拿走我的钱 (And take my money)" />
           </div>
         </div>
-
         <input className='meme-button' type="submit" placeholder="Get a new meme image 🖼️" onClick={getMeme} />
     </div>
+    <hr />
+    <div className='img-container'><img className='meme-img' src={meme} alt="" /></div>
     </main>
   )
 }

@@ -78,21 +78,12 @@ body {
   height: 40px;
 }
 
+.img-container {
+  display: flex;
+  justify-content: center;
+}
 
-/* 
-      <form>
-        <div className='meme-input-fields'>
-          <div className='top-text-block'>
-            <label for="top-text">Top Text:</label>
-            <input type="text" id="top-text" name="top-text" value="shut up" />
-          </div>
-          <div className='bottom-text-block'>
-            <label for="bottom-text">Bottom Text:</label>
-            <input type="text" id="bottom-text" name="bottom-text" value="and take my money" />
-          </div>
-        </div>
-
-        <input type="submit" value="Get a new meme image 🖼️" />
-    </form> */
-
-
+.meme-img {
+  max-height: 300px;
+  max-width: 550px;
+}
