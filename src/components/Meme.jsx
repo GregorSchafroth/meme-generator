@@ -9,6 +9,8 @@ const Meme = () => {
     randomImage: ''
   })
 
+  console.log(meme.topText, meme.bottomText)
+
   function getMeme() {    
     setMeme((prevState) => ({
       ...prevState,
@@ -19,23 +21,37 @@ const Meme = () => {
     const randomIndex = Math.floor(Math.random() * arr.length);
     return arr[randomIndex];
   }
+
+  function handleChange(event){
+    const {name, value} = event.target
+    setMeme(prevState => {
+      return {
+        ...prevState,
+        [name]: value
+      }
+    })
+  }
   
   return (
     <main className='meme-container'>
       <div>
         <div className='meme-input-fields'>
           <div className='top-text-block'>
-            <label className='top-text' htmlFor="top-text">Top Text</label>
-            <input className='top-field' type="text" id="top-text" name="top-text" placeholder="闭嘴 (shut up)" />
+            <label className='topText' htmlFor="topText">Top Text</label>
+            <input className='topField' type="text" id="topText" name="topText" placeholder="text" onChange={handleChange} />
           </div>
           <div className='bottom-text-block'>
-            <label className='bottom-text' htmlFor="bottom-text">Bottom Text</label>
-            <input className='bottom-field' type="text" id="bottom-text" name="bottom-text" placeholder="拿走我的钱 (And take my money)" />
+            <label className='bottomText' htmlFor="bottomText">Bottom Text</label>
+            <input className='bottomField' type="text" id="bottomText" name="bottomText" placeholder="text" onChange={handleChange} />
           </div>
         </div>
         <input className='meme-button' type="submit" placeholder="Get a new meme image 🖼️" onClick={getMeme} />
     </div>
-    <div className='img-container'><img className='meme-img' src={meme.randomImage} alt="" /></div>
+    <div className='meme'>
+      <div className='img-container'><img className='meme-img' src={meme.randomImage} alt="" /></div>
+      <h2 className="meme--text top">{meme.topText}</h2>
+      <h2 className="meme--text bottom">{meme.bottomText}</h2>
+    </div>
     </main>
   )
 }
