@@ -6,7 +6,7 @@ const Meme = () => {
   const [meme, setMeme] = React.useState({
     topText: '',
     bottomText: '',
-    randomImage: getRandomElement(Memes.data.memes).url
+    randomImage: ''
   })
 
   function getMeme() {    
@@ -35,7 +35,6 @@ const Meme = () => {
         </div>
         <input className='meme-button' type="submit" placeholder="Get a new meme image 🖼️" onClick={getMeme} />
     </div>
-    <hr />
     <div className='img-container'><img className='meme-img' src={meme.randomImage} alt="" /></div>
     </main>
   )
